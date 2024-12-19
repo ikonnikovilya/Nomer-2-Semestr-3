@@ -7,25 +7,25 @@ namespace rut
 	template <typename T> class dequeueue;
 
 	/*
-	*@brief Оператор "<<" для класса дэк
-	*@tparam T Тип хранимых данных при помощи дэка
-	*@param output Поток вывода
-	*@param deque Дэк
-	*@return Изменённый поток вывода
+	*@brief РћРїРµСЂР°С‚РѕСЂ "<<" РґР»СЏ РєР»Р°СЃСЃР° РґСЌРє
+	*@tparam T РўРёРї С…СЂР°РЅРёРјС‹С… РґР°РЅРЅС‹С… РїСЂРё РїРѕРјРѕС‰Рё РґСЌРєР°
+	*@param output РџРѕС‚РѕРє РІС‹РІРѕРґР°
+	*@param deque Р”СЌРє
+	*@return РР·РјРµРЅС‘РЅРЅС‹Р№ РїРѕС‚РѕРє РІС‹РІРѕРґР°
 	*/
 	template <typename T>
 	std::ostream& operator << (std::ostream& output, const rut::dequeueue<T>& deque);
 
 	/*
-	*@brief Класс дэк
-	*@tparam T Тип хранимых данных при помощи дэка
+	*@brief РљР»Р°СЃСЃ РґСЌРє
+	*@tparam T РўРёРї С…СЂР°РЅРёРјС‹С… РґР°РЅРЅС‹С… РїСЂРё РїРѕРјРѕС‰Рё РґСЌРєР°
 	*/
 	template <typename T>
 	class dequeueue
 	{
 	private:
 		/*
-		*@brief Структура узла
+		*@brief РЎС‚СЂСѓРєС‚СѓСЂР° СѓР·Р»Р°
 		*/
 		struct Node
 		{
@@ -36,103 +36,103 @@ namespace rut
 		};
 
 		/*
-		*@brief Узел головы дэка
+		*@brief РЈР·РµР» РіРѕР»РѕРІС‹ РґСЌРєР°
 		*/
 		Node* head;
 
 		/*
-		*@brief Узел хвоста дэка
+		*@brief РЈР·РµР» С…РІРѕСЃС‚Р° РґСЌРєР°
 		*/
 		Node* tail;
 
 		/*
-		*@brief Размер дэка
+		*@brief Р Р°Р·РјРµСЂ РґСЌРєР°
 		*/
 		size_t size;
 
 	public:
 
 		/*
-		*@brief Инициализирует объект типа ::Deque<T>
+		*@brief РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РѕР±СЉРµРєС‚ С‚РёРїР° ::Deque<T>
 		*/
 		dequeueue();
 
 		/*
-		*@brief Инициализирует объект типа ::Deque<T> из списка
-		*@param list Список из объектов типа T
+		*@brief РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РѕР±СЉРµРєС‚ С‚РёРїР° ::Deque<T> РёР· СЃРїРёСЃРєР°
+		*@param list РЎРїРёСЃРѕРє РёР· РѕР±СЉРµРєС‚РѕРІ С‚РёРїР° T
 		*/
 		dequeueue(std::initializer_list<T> list);
 
 		/*
-		*@brief Конструктор копирования объекта типа ::Deque<T>
-		*@param other Другой дэк
+		*@brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РѕР±СЉРµРєС‚Р° С‚РёРїР° ::Deque<T>
+		*@param other Р”СЂСѓРіРѕР№ РґСЌРє
 		*/
 		dequeueue(const dequeueue& other);
 
 		/*
-		*@brief Конструктор перемещения объекта типа ::Deque<T>
-		*@param other Другой дэк
+		*@brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ РѕР±СЉРµРєС‚Р° С‚РёРїР° ::Deque<T>
+		*@param other Р”СЂСѓРіРѕР№ РґСЌРє
 		*/
 		dequeueue(dequeueue&& other) noexcept;
 
 		/*
-		*@brief Деструктор. Разрушает объекта типа ::Deque<T>
+		*@brief Р”РµСЃС‚СЂСѓРєС‚РѕСЂ. Р Р°Р·СЂСѓС€Р°РµС‚ РѕР±СЉРµРєС‚Р° С‚РёРїР° ::Deque<T>
 		*/
 		~dequeueue();
 
 		/*
-		*@brief Оператор присваивания для дэка типа ::Deque<T>
-		*@param other Другой дэк
-		*@return Возвращает дэк, равный other
+		*@brief РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РґР»СЏ РґСЌРєР° С‚РёРїР° ::Deque<T>
+		*@param other Р”СЂСѓРіРѕР№ РґСЌРє
+		*@return Р’РѕР·РІСЂР°С‰Р°РµС‚ РґСЌРє, СЂР°РІРЅС‹Р№ other
 		*/
 		dequeueue& operator=(const dequeueue& other);
 
 		/*
-		*@brief Оператор присваивания перемещением для дэка типа ::Deque<T>
-		*@param other Другой дэк
-		*@return Возвращает дэк, равный other
+		*@brief РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј РґР»СЏ РґСЌРєР° С‚РёРїР° ::Deque<T>
+		*@param other Р”СЂСѓРіРѕР№ РґСЌРє
+		*@return Р’РѕР·РІСЂР°С‰Р°РµС‚ РґСЌРє, СЂР°РІРЅС‹Р№ other
 		*/
 		dequeueue& operator = (dequeueue&& other) noexcept;
 
 		/*
-		*@brief Функция удаления переднего узла дэка
+		*@brief Р¤СѓРЅРєС†РёСЏ СѓРґР°Р»РµРЅРёСЏ РїРµСЂРµРґРЅРµРіРѕ СѓР·Р»Р° РґСЌРєР°
 		*/
 		void pop_front();
 
 		/*
-		*@brief Функция удаления последнего узла дэка
+		*@brief Р¤СѓРЅРєС†РёСЏ СѓРґР°Р»РµРЅРёСЏ РїРѕСЃР»РµРґРЅРµРіРѕ СѓР·Р»Р° РґСЌРєР°
 		*/
 		void pop_back();
 
 		/*
-		*@brief Функция добавления узла спереди дэка
-		*@param value Значение, которое будет принимать новый узел типа Т
+		*@brief Р¤СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»РµРЅРёСЏ СѓР·Р»Р° СЃРїРµСЂРµРґРё РґСЌРєР°
+		*@param value Р—РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РїСЂРёРЅРёРјР°С‚СЊ РЅРѕРІС‹Р№ СѓР·РµР» С‚РёРїР° Рў
 		*/
-		void push_front(const T value);
+		void push_front(const T& value);
 
 		/*
-		*@brief Функция добавления узла в конце дэка
-		*@param value Значение, которое будет принимать новый узел
+		*@brief Р¤СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»РµРЅРёСЏ СѓР·Р»Р° РІ РєРѕРЅС†Рµ РґСЌРєР°
+		*@param value Р—РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РїСЂРёРЅРёРјР°С‚СЊ РЅРѕРІС‹Р№ СѓР·РµР»
 		*/
-		void push_back(const T value);
+		void push_back(const T& value);
 
 		/*
-		*@brief Функция для получения значения переднего узла дэка
-		*@return Значение переднего узла типа T
+		*@brief Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРґРЅРµРіРѕ СѓР·Р»Р° РґСЌРєР°
+		*@return Р—РЅР°С‡РµРЅРёРµ РїРµСЂРµРґРЅРµРіРѕ СѓР·Р»Р° С‚РёРїР° T
 		*/
 		T front();
 
 		/*
-		*@brief Функция для получения значения последнего узла дэка
-		*@return Значение последнего узла типа T
+		*@brief Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РїРѕСЃР»РµРґРЅРµРіРѕ СѓР·Р»Р° РґСЌРєР°
+		*@return Р—РЅР°С‡РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СѓР·Р»Р° С‚РёРїР° T
 		*/
 		T back();
 
 		/*
-		*@brief Функция проверки на пустоту дэка типа ::Deque<T>
-		*@return true если дэк не содержит каких-либо элементов, иначе false
+		*@brief Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РЅР° РїСѓСЃС‚РѕС‚Сѓ РґСЌРєР° С‚РёРїР° ::Deque<T>
+		*@return true РµСЃР»Рё РґСЌРє РЅРµ СЃРѕРґРµСЂР¶РёС‚ РєР°РєРёС…-Р»РёР±Рѕ СЌР»РµРјРµРЅС‚РѕРІ, РёРЅР°С‡Рµ false
 		*/
-		bool IsEmpty();
+		bool is_empty();
 	};
 
 	template <typename T>
@@ -168,7 +168,7 @@ namespace rut
 	template <typename T>
 	dequeueue<T>::~dequeueue()
 	{
-		while (!(IsEmpty()))
+		while (!(is_empty()))
 		{
 			pop_front();
 		}
@@ -206,9 +206,9 @@ namespace rut
 	template <typename T>
 	void dequeueue<T>::pop_front()
 	{
-		if (IsEmpty())
+		if (is_empty())
 		{
-			throw std::out_of_range("выход за пределы дэка");
+			throw std::out_of_range("РІС‹С…РѕРґ Р·Р° РїСЂРµРґРµР»С‹ РґСЌРєР°");
 		}
 		if (this->head == this->tail)
 		{
@@ -225,9 +225,9 @@ namespace rut
 	template <typename T>
 	void dequeueue<T>::pop_back()
 	{
-		if (IsEmpty())
+		if (is_empty())
 		{
-			throw std::out_of_range("выход за пределы дэка");
+			throw std::out_of_range("РІС‹С…РѕРґ Р·Р° РїСЂРµРґРµР»С‹ РґСЌРєР°");
 		}
 		if (this->head == this->tail)
 		{
@@ -242,10 +242,10 @@ namespace rut
 	}
 
 	template <typename T>
-	void dequeueue<T>::push_front(const T value)
+	void dequeueue<T>::push_front(const T& value)
 	{
 		Node* frontNode = new Node(value);
-		if (IsEmpty())
+		if (is_empty())
 		{
 			this->head = this->tail = frontNode;
 		}
@@ -259,10 +259,10 @@ namespace rut
 	}
 
 	template <typename T>
-	void dequeueue<T>::push_back(const T value)
+	void dequeueue<T>::push_back(const T& value)
 	{
 		Node* backNode = new Node(value);
-		if (IsEmpty())
+		if (is_empty())
 		{
 			this->head = this->tail = backNode;
 		}
@@ -278,9 +278,9 @@ namespace rut
 	template <typename T>
 	T dequeueue<T>::front()
 	{
-		if (IsEmpty())
+		if (is_empty())
 		{
-			throw std::out_of_range("выход за границы дэка");
+			throw std::out_of_range("РІС‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†С‹ РґСЌРєР°");
 		}
 		return this->head->data;
 	}
@@ -288,15 +288,15 @@ namespace rut
 	template <typename T>
 	T dequeueue<T>::back()
 	{
-		if (IsEmpty())
+		if (is_empty())
 		{
-			throw std::out_of_range("выход за границы дэка");
+			throw std::out_of_range("РІС‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†С‹ РґСЌРєР°");
 		}
 		return this->tail->data;
 	}
 
 	template <typename T>
-	bool dequeueue<T>::IsEmpty()
+	bool dequeueue<T>::is_empty()
 	{
 		return this->size == 0;
 	}
@@ -305,7 +305,7 @@ namespace rut
 	std::ostream& operator << (std::ostream& output, const dequeueue<T>& deque)
 	{
 		dequeueue temp = deque;
-		while (!(temp.IsEmpty()))
+		while (!(temp.isempty()))
 		{
 			output << temp.front() << std::endl;
 			temp.pop_front();

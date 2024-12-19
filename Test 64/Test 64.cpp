@@ -13,7 +13,7 @@ namespace SolverTest
 		TEST_METHOD(EmptyIntDeque_Success)
 		{
 			rut::dequeueue<int> deq;
-			Assert::IsTrue(deq.IsEmpty());
+			Assert::IsTrue(deq.is_empty());
 		}
 		TEST_METHOD(PushFrontOneTimeInt_ValidData_Success)
 		{
@@ -85,7 +85,7 @@ namespace SolverTest
 		TEST_METHOD(EmptyPointDeque_Success)
 		{
 			rut::dequeueue<Point::Point> deq;
-			Assert::IsTrue(deq.IsEmpty());
+			Assert::IsTrue(deq.is_empty());
 		}
 		TEST_METHOD(PushFrontOneTimePoint_ValidData_Success)
 		{
@@ -179,7 +179,7 @@ namespace SolverTest
 		TEST_METHOD(EmptyStringDeque_Success)
 		{
 			rut::dequeueue <std::string> deq;
-			Assert::IsTrue(deq.IsEmpty());
+			Assert::IsTrue(deq.is_empty());
 		}
 		TEST_METHOD(PushFrontOneTimeString_ValidData_Success)
 		{
